@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="groupBox.AccessibleDescription" xml:space="preserve">
+    <value>99214000</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 72</value>
+  </data>
+  <data name="btnStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 49</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnStart.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>开始抽奖</value>
+  </data>
+  <data name="&gt;&gt;btnStart.Name" xml:space="preserve">
+    <value>btnStart</value>
+  </data>
+  <data name="&gt;&gt;btnStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStart.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;btnStart.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="XieYuancheng.AccessibleDescription" xml:space="preserve">
+    <value>35163000</value>
+  </data>
+  <data name="XieYuancheng.AccessibleName" xml:space="preserve">
+    <value>000003112</value>
+  </data>
+  <data name="XieYuancheng.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="XieYuancheng.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="XieYuancheng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 82</value>
+  </data>
+  <data name="XieYuancheng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="XieYuancheng.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="XieYuancheng.Text" xml:space="preserve">
+    <value>傲宇神弦</value>
+  </data>
+  <data name="&gt;&gt;XieYuancheng.Name" xml:space="preserve">
+    <value>XieYuancheng</value>
+  </data>
+  <data name="&gt;&gt;XieYuancheng.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;XieYuancheng.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;XieYuancheng.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="JinGang.AccessibleDescription" xml:space="preserve">
+    <value>99228000</value>
+  </data>
+  <data name="JinGang.AccessibleName" xml:space="preserve">
+    <value>289931120</value>
+  </data>
+  <data name="JinGang.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="JinGang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="JinGang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>449, 142</value>
+  </data>
+  <data name="JinGang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 21</value>
+  </data>
+  <data name="JinGang.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="JinGang.Text" xml:space="preserve">
+    <value>金刚</value>
+  </data>
+  <data name="&gt;&gt;JinGang.Name" xml:space="preserve">
+    <value>JinGang</value>
+  </data>
+  <data name="&gt;&gt;JinGang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;JinGang.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;JinGang.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="MoYuancheng.AccessibleDescription" xml:space="preserve">
+    <value>55163000</value>
+  </data>
+  <data name="MoYuancheng.AccessibleName" xml:space="preserve">
+    <value>000003112</value>
+  </data>
+  <data name="MoYuancheng.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MoYuancheng.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="MoYuancheng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 26</value>
+  </data>
+  <data name="MoYuancheng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="MoYuancheng.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="MoYuancheng.Text" xml:space="preserve">
+    <value>撼天申杵</value>
+  </data>
+  <data name="&gt;&gt;MoYuancheng.Name" xml:space="preserve">
+    <value>MoYuancheng</value>
+  </data>
+  <data name="&gt;&gt;MoYuancheng.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MoYuancheng.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;MoYuancheng.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TianZhao.AccessibleDescription" xml:space="preserve">
+    <value>99227000</value>
+  </data>
+  <data name="TianZhao.AccessibleName" xml:space="preserve">
+    <value>289931120</value>
+  </data>
+  <data name="TianZhao.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TianZhao.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="TianZhao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 142</value>
+  </data>
+  <data name="TianZhao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 21</value>
+  </data>
+  <data name="TianZhao.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TianZhao.Text" xml:space="preserve">
+    <value>天兆</value>
+  </data>
+  <data name="&gt;&gt;TianZhao.Name" xml:space="preserve">
+    <value>TianZhao</value>
+  </data>
+  <data name="&gt;&gt;TianZhao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TianZhao.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;TianZhao.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Money.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Money.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="Money.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="Money.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 21</value>
+  </data>
+  <data name="Money.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Money.Text" xml:space="preserve">
+    <value>5亿江湖币</value>
+  </data>
+  <data name="&gt;&gt;Money.Name" xml:space="preserve">
+    <value>Money</value>
+  </data>
+  <data name="&gt;&gt;Money.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Money.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;Money.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="WuYa.AccessibleDescription" xml:space="preserve">
+    <value>99267000</value>
+  </data>
+  <data name="WuYa.AccessibleName" xml:space="preserve">
+    <value>119931120</value>
+  </data>
+  <data name="WuYa.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WuYa.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="WuYa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 142</value>
+  </data>
+  <data name="WuYa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 21</value>
+  </data>
+  <data name="WuYa.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WuYa.Text" xml:space="preserve">
+    <value>乌鸦</value>
+  </data>
+  <data name="&gt;&gt;WuYa.Name" xml:space="preserve">
+    <value>WuYa</value>
+  </data>
+  <data name="&gt;&gt;WuYa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WuYa.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;WuYa.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="JiuHu.AccessibleDescription" xml:space="preserve">
+    <value>99198000</value>
+  </data>
+  <data name="JiuHu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="JiuHu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="JiuHu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 142</value>
+  </data>
+  <data name="JiuHu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="JiuHu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="JiuHu.Text" xml:space="preserve">
+    <value>武神酒壶</value>
+  </data>
+  <data name="&gt;&gt;JiuHu.Name" xml:space="preserve">
+    <value>JiuHu</value>
+  </data>
+  <data name="&gt;&gt;JiuHu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;JiuHu.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;JiuHu.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="MoQun.AccessibleDescription" xml:space="preserve">
+    <value>99216000</value>
+  </data>
+  <data name="MoQun.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MoQun.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="MoQun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 26</value>
+  </data>
+  <data name="MoQun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="MoQun.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="MoQun.Text" xml:space="preserve">
+    <value>魔神群</value>
+  </data>
+  <data name="&gt;&gt;MoQun.Name" xml:space="preserve">
+    <value>MoQun</value>
+  </data>
+  <data name="&gt;&gt;MoQun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MoQun.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;MoQun.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ZhengYuancheng.AccessibleDescription" xml:space="preserve">
+    <value>15164000</value>
+  </data>
+  <data name="ZhengYuancheng.AccessibleName" xml:space="preserve">
+    <value>000003112</value>
+  </data>
+  <data name="ZhengYuancheng.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ZhengYuancheng.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="ZhengYuancheng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 82</value>
+  </data>
+  <data name="ZhengYuancheng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="ZhengYuancheng.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ZhengYuancheng.Text" xml:space="preserve">
+    <value>圣武神玉</value>
+  </data>
+  <data name="&gt;&gt;ZhengYuancheng.Name" xml:space="preserve">
+    <value>ZhengYuancheng</value>
+  </data>
+  <data name="&gt;&gt;ZhengYuancheng.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ZhengYuancheng.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;ZhengYuancheng.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Pifeng.AccessibleDescription" xml:space="preserve">
+    <value>99218000</value>
+  </data>
+  <data name="Pifeng.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Pifeng.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="Pifeng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 142</value>
+  </data>
+  <data name="Pifeng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="Pifeng.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Pifeng.Text" xml:space="preserve">
+    <value>武神披风</value>
+  </data>
+  <data name="&gt;&gt;Pifeng.Name" xml:space="preserve">
+    <value>Pifeng</value>
+  </data>
+  <data name="&gt;&gt;Pifeng.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Pifeng.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;Pifeng.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="XieQun.AccessibleDescription" xml:space="preserve">
+    <value>99215000</value>
+  </data>
+  <data name="XieQun.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="XieQun.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="XieQun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 26</value>
+  </data>
+  <data name="XieQun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="XieQun.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="XieQun.Text" xml:space="preserve">
+    <value>邪神群</value>
+  </data>
+  <data name="&gt;&gt;XieQun.Name" xml:space="preserve">
+    <value>XieQun</value>
+  </data>
+  <data name="&gt;&gt;XieQun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;XieQun.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;XieQun.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ZhengQun.AccessibleDescription" xml:space="preserve">
+    <value>99214000</value>
+  </data>
+  <data name="ZhengQun.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ZhengQun.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ZhengQun.Font" type="System.Drawing.Font, System.Drawing">
+    <value>楷体, 15.75pt</value>
+  </data>
+  <data name="ZhengQun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 26</value>
+  </data>
+  <data name="ZhengQun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="ZhengQun.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ZhengQun.Text" xml:space="preserve">
+    <value>正神群</value>
+  </data>
+  <data name="&gt;&gt;ZhengQun.Name" xml:space="preserve">
+    <value>ZhengQun</value>
+  </data>
+  <data name="&gt;&gt;ZhengQun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ZhengQun.Parent" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;ZhengQun.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="groupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 21</value>
+  </data>
+  <data name="groupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 193</value>
+  </data>
+  <data name="groupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox.Name" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;groupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>351, 243</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>我的贡献值：</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbGongxian.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbGongxian.Location" type="System.Drawing.Point, System.Drawing">
+    <value>442, 243</value>
+  </data>
+  <data name="lbGongxian.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 12</value>
+  </data>
+  <data name="lbGongxian.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbGongxian.Name" xml:space="preserve">
+    <value>lbGongxian</value>
+  </data>
+  <data name="&gt;&gt;lbGongxian.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbGongxian.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbGongxian.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbmRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 240</value>
+  </data>
+  <data name="cbmRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="cbmRole.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbmRole.Name" xml:space="preserve">
+    <value>cbmRole</value>
+  </data>
+  <data name="&gt;&gt;cbmRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbmRole.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbmRole.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 243</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>用户角色</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>613, 282</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>629, 320</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>629, 320</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>抽奖程序</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "物品兑换";
+}
+@using Jianghu.Framwork.Repository.Fields
+@model Jianghu.Framwork.Repository.Model.AvatarInfo
+<div style="width: 550px;margin:100px auto;">
+    <label>角色：</label>
+    @Html.DropDownListFor(u => u.aName, ViewBag.NameList as IEnumerable<SelectListItem>)
+    <label>在线时间：</label>
+    <label id="playtime"></label>
+    <label>选择物品：</label>
+    <select id="item">
+        <option value="">请选择</option>
+        <option value="100">兑换100贡献</option>
+        <option value="50">兑换50雪丹</option>
+        <option value="99214000">正神群</option>
+        <option value="99215000">邪神群</option>
+        <option value="99216000">魔神群</option>
+        <option value="15007000">正110神武器</option>
+        <option value="35003000">邪110神武器</option>
+        <option value="35003000">魔110神武器</option>
+        <option value="150150001051900015023000">正110神套装</option>
+        <option value="350150003501900035023000">邪110神套装</option>
+        <option value="550150005501900055023000">魔110神套装</option>
+        <option value="15141000">正123神武器</option>
+        <option value="35120000">邪123神武器</option>
+        <option value="55142000">魔123神武器</option>
+        <option value="151860001520800015230000">正123神套装</option>
+        <option value="351850003520800035230000">邪123神套装</option>
+        <option value="551850005520800055230000">魔123神套装</option>
+    </select>
+    <button id="submit">开始领取</button>
+</div>
+<div style="width: 380px;margin:80px auto;">
+    <button id="exchangeItem">神装换贡献→1件=20贡献(要兑换的装备放在仓库第一页)</button>
+</div>
+<div style="width: 380px;margin:50px auto;color: white;border-top:1px solid white;padding-top: 5px;">
+    <label>排行榜类型</label>
+    <select style="margin-left:90px;margin-bottom: 20px" id="paihang">
+        <option value="0">血丹</option>
+        <option value="1">力量丹</option>
+        <option value="2">敏捷丹</option>
+        <option value="3">贡献</option>
+        <option value="4">在线时间</option>
+    </select>
+    <table id ="paihangliebiao" style="width: 400px">
+
+    </table>
+</div>
+@section scripts
+{
+    <script src="~/Scripts/jsrender.js"></script>
+<script type="x-jsrender" id="paihangTitleTemplate">
+    <tr>
+        <th>名次</th>
+        <th>角色名</th>
+        <th>数量</th>
+    </tr>
+</script>
+    <script type="x-jsrender" id="paihangTemplate">
+        <tr>
+            <td>{{: #getIndex()+1}}</td>
+            <td>{{:Name}}</td>
+            <td>{{:Numbers}}</td>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        $("#paihang").change(function() {
+            getPaihang($(this).val());
+        });
+        getPaihang($("#paihang").val());
+        function getPaihang(val) {
+            $.ajax({
+                url: '@Url.Action("GetPaiHang")',
+                type: 'post',
+                data: { type: val},
+                success: function (s) {
+                    $("#paihangliebiao").html($("#paihangTitleTemplate").render() + $("#paihangTemplate").render(s));
+                }, error: function () {
+                    alert("服务器正忙,请稍后重试!");
+                }
+            });
+        }
+        getValue($("#aName").val());
+        $("#aName").change(function () {
+            var aName = $(this).val();
+            getValue(aName);
+        });
+        function getValue(aName) {
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("GetPlayTime")',
+                data: { aName: aName },
+                success: function (s) {
+                    $("#playtime").text(s + " 分钟");
+                    $("#playtime").attr("data-value", s);
+                }
+            });
+        }
+        $("#submit").click(function () {
+
+            var time = $("#playtime").attr("data-value");
+            if (!$("#aName").val()) {
+                alert("请选择用户角色!");
+            } else if (!$("#item").val()) {
+                alert("请选择兑换物品!");
+            } else if (parseInt(time) < 1000) {
+                alert("兑换时间小于1000!");
+            } else {
+                $.ajax({
+                    url: '@Url.Action("ExChange")',
+                    type: 'post',
+                    data: {
+                        item: $("#item").val(),
+                        aName: $("#aName").val(),
+                        playtime: time
+                    },
+                    success: function (s) {
+                        if (s.IsSuccess == true) {
+                            getValue($("#aName").val());
+                        }
+                        alert(s.Message);
+                    }, error: function () {
+                        alert("服务器正忙,请稍后重试!");
+                    }
+                });
+            }
+        });
+        $("#exchangeItem").click(function () {
+            if (!$("#aName").val()) {
+                alert("请选择用户角色!");
+            } else {
+                $.ajax({
+                    url: '@Url.Action("ExchangeItem")',
+                    type: 'post',
+                    data: {
+                        aName: $("#aName").val()
+                    },
+                    success: function (s) {
+                        alert(s.Message);
+                    }, error: function () {
+                        alert("服务器正忙,请稍后重试!");
+                    }
+                });
+            }
+        });
+    </script>
+}

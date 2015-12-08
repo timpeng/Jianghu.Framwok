@@ -1,0 +1,15 @@
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\Jianghu.Framwork.Repository.dll.config
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\Jianghu.Framwork.Repository.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\Jianghu.Framwork.Repository.pdb
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\AutoMapper.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\System.IO.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\System.Runtime.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\System.Threading.Tasks.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\AutoMapper.xml
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\System.IO.xml
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\System.Runtime.xml
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\bin\Release\System.Threading.Tasks.xml
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\obj\Release\Jianghu.Framwork.Repository.csproj.App.config
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\obj\Release\Jianghu.Framwork.Repository.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\obj\Release\Jianghu.Framwork.Repository.pdb
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Repository\obj\Release\Jianghu.Framwork.Repository.csprojResolveAssemblyReference.cache

@@ -1,0 +1,33 @@
+@charset "gb2312";
+/* CSS Document */
+
+* {
+	font-size:13px; margin:0; padding:0;
+}
+body { font-size:12px; font-family:"宋体";background-color:#000000; margin:0px;}
+img{border:0px; vertical-align:bottom;}
+a { font-size: 12px; color: #fff; }
+a:link { text-decoration: none;}
+a:visited { text-decoration: none; }
+a:hover { color:#FF0; text-decoration:underline;}
+a:active { text-decoration: none; color: #FF0000;}
+ul {  margin:0 0 0 0; padding: 0; list-style: none; }
+
+/*顶部背景图*/
+.top { background:url(taobao_com_top1.png) no-repeat; width:1002px; height:186px;}
+.top2 { background:url(taobao_com_top2.png) no-repeat; width:1002px; height:167px;}
+.top3 { background:url(taobao_com_top3.png) no-repeat; width:1002px; height:144px;}
+/*内容框架*/
+.main { background:url(taobao_com_top_bg.jpg) center top no-repeat; width:100%; overflow:hidden;}
+.main2 { margin:0 auto; width:1002px; overflow:hidden;}
+.main3 { width:1002px; overflow:hidden; }
+
+/*内容样式*/
+.content { background:url(taobao_com_bg1.jpg) no-repeat; width:1002px; height:82px;}
+.content2 { background:url(taobao_com_bg2.jpg) no-repeat; width:1002px; height:506px;}
+.content3 { width:788px; overflow:hidden; margin-left:180px; padding-top:30px; padding-bottom:10px;}
+.content4 { background:url(taobao_com_bg3.jpg) no-repeat; width:1002px; height:90px;}
+.content5 { background:url(taobao_com_bg4.jpg) repeat-y; width:1002px; overflow:hidden;}
+.content6 { width:930px; overflow:hidden; margin-left:36px; padding-top:28px; padding-bottom:20px;}
+
+.footer { background:url(taobao_com_foot_bg.jpg) no-repeat; width:1002px; height:104px;color: white;}

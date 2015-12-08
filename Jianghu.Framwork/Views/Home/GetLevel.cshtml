@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "问鼎新江湖 领取等级";
+}
+@model Jianghu.Framwork.Repository.Model.AvatarInfo
+<div style="width: 400px;margin:100px auto;">
+    <label>角色：</label>
+    @Html.DropDownListFor(u => u.aName, ViewBag.NameList as IEnumerable<SelectListItem>)
+    <label>等级：</label>
+    <select id="level">
+        <option value="">请选择</option>
+        <option value="112" data-aeatlifepotion="600" data-aeatmanapotion="600" data-askillpoint="600" data-astatebonuspoint="490" data-ageneralexperience="734286013">领取112级</option>
+        <option value="123" data-aeatlifepotion="600" data-aeatmanapotion="600" data-askillpoint="800" data-astatebonuspoint="820" data-ageneralexperience="875165311">领取11甲</option>
+    </select>
+    <button id="submit">开始领取</button>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $("#submit").click(function () {
+            if (!$("#aName").val()) {
+                alert("请选择用户角色!");
+            } else if (!$("#level").val()) {
+                alert("请选择等级!");
+            } else {
+                var selectValue = $("#level").find("option:selected");
+                $.ajax({
+                    url: '@Url.Action("GetLevel")',
+                    type: 'post',
+                    data: {
+                        aEatLifePotion: selectValue.attr("data-aeatlifepotion"),
+                        aEatManaPotion: selectValue.attr("data-aeatmanapotion"),
+                        aLevel: $("#level").val(),
+                        aGeneralExperience: selectValue.attr("data-ageneralexperience"),
+                        aSkillPoint: selectValue.attr("data-askillpoint"),
+                        aStateBonusPoint: selectValue.attr("data-astatebonuspoint"),
+                        aName: $("#aName").val()
+                    },
+                    success: function (s) {
+                        if (s) {
+                            alert("等级领取成功!");
+                        } else {
+                            alert("只能升级,不能降级!");
+                        }
+                    }, error: function () {
+                        alert("服务器正忙,请稍后重试!");
+                    }
+                });
+            }
+        });
+
+    </script>
+}

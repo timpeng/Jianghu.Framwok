@@ -1,0 +1,9 @@
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\bin\Release\Jianghu.Framwork.Core.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\bin\Release\Jianghu.Framwork.Core.pdb
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\bin\Release\Jianghu.Framwork.Repository.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\bin\Release\AutoMapper.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\bin\Release\Jianghu.Framwork.Repository.pdb
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\bin\Release\AutoMapper.xml
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\obj\Release\Jianghu.Framwork.Core.csprojResolveAssemblyReference.cache
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\obj\Release\Jianghu.Framwork.Core.dll
+D:\web\Jianghu.Framwork\Jianghu.Framwork.Core\obj\Release\Jianghu.Framwork.Core.pdb

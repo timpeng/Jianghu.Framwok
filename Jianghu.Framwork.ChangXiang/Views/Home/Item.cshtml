@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "我的奖品";
+}
+@section scripts
+{
+    <script src="~/Content/easyui/jquery.easyui.min.js"></script>
+    <link href="~/Content/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/icon.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var aName = '@ViewBag.aName';
+        $('#itemContent').datagrid({
+            title: '我的奖品列表',
+            iconCls: 'icon-tip',//图标
+            queryParams: {
+                aName: aName
+            },
+            height: '500',
+            nowrap: false,
+            striped: true,
+            border: true,
+            checkOnSelect: false,
+            collapsible: false,//是否可折叠的
+            url: '@Url.Action("GetItem")',
+            remoteSort: false,
+            idField: 'Id',
+            singleSelect: true,//是否单选
+            pagination: true,//分页控件
+            rownumbers: true,//行号
+            fitColumns: true,
+            pageSize: 20,
+            frozenColumns: [[
+                { field: 'ck', checkbox: true }
+            ]],
+            columns: [[
+                { field: 'Id', hidden: true },
+                { field: 'aItemName', title: '物品名称', width: 20 },
+                { field: 'aName', title: '角色名称', width: 30 },
+                {
+                    field: 'aState', title: '领取状态', width: 30, align: 'center',
+                    formatter: function (value, row, index) {
+                        if (value == 0) {
+                            return '<a onclick=\'getClick("' + row.aItem + '","' + row.aItemValue + '","' + aName + '",'+row.Id+')\' id="btn" class="l-btn l-btn-small" group=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text">领取物品</span><span class="l-btn-icon icon-undo">&nbsp;</span></span></a>';
+                        } else {
+                            return "已领取";
+                        }
+                    }
+                }
+            ]]
+        });
+
+        function getClick(item, itemValue, aName,id) {
+            $.ajax({
+                url: '@Url.Action("GetChoujiangItem")',
+                data: { aName: aName, aItem: item, aItemValue: itemValue,Id:id },
+                type: 'post',
+                success: function (s) {
+                    $.messager.show({
+                        title: '系统消息',
+                        msg: s.Message,
+                        timeout: 5000,
+                        showType: 'slide'
+                    });
+                    $('#itemContent').datagrid('reload');
+                }, error: function () {
+                    $.messager.show({
+                        title: '系统消息',
+                        msg: '系统繁忙，稍后请重试!',
+                        timeout: 5000,
+                        showType: 'slide'
+                    });
+
+                }
+            });
+        }
+    </script>
+}
+<div id="itemContent"></div>

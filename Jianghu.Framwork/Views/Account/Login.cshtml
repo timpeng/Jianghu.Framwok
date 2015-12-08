@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "问鼎新江湖 ";
+}
+<div class="reg clear">
+    <div class="lft">
+        <div class="title">会员登录</div><form method="post" name="login" action="" id="loginForm">
+            <ul class="insert clear">
+                <li>
+                    <span class="u">用户名：</span>
+                    <input type="text" name="User" class="text" maxlength="12"><span class="red">*</span><span class="remind">用户名应该为4-12位之间</span>
+                </li>
+                <li>
+                    <span class="u">密码：</span>
+                    <input type="password" name="Pass" class="text" maxlength="12"><span class="red">*</span><span class="remind">密码应该为6-12位之间</span>
+                </li>
+                <li>
+                    <span class="u">验证码：</span>
+                    <input type="text" name="verify" class="yzm" maxlength="5"><img src="@Url.Action("ValidateCode","Common")" class="yzms" title="刷新验证码" id="verifyImg">
+                </li>
+                <li>
+                    <span class="u">&nbsp;</span>
+                    <input type="checkbox" class="ck"><span class="remind">记住用户</span><a href="@Url.Action("Index")" class="red">修改密码</a>
+                </li>
+                <li>
+                    <span class="u">&nbsp;</span><input type="hidden" value="login" name="ac">
+                    <input type="button" id="sub" class="login" value="">
+                </li>
+            </ul>
+        </form>
+    </div><div class="rgt">
+        <p>您还不是本站会员，请注册</p><p>
+            <a href="@Url.Action("Register")" class="regi"></a>
+        </p>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $("#sub").live("click", function () {
+            if ($("input[name='User']").val() == "") {
+                $("input[name='User']").focus();
+                alert('请输入用户名！'); return;
+            }
+            if ($("input[name='User']").val().length < 4) {
+                $(this).focus();
+                alert('帐号少余4位！'); return;
+            }
+            if ($("input[name='Pass']").val() == "") {
+                $(this).focus();
+                alert('请输入密码！'); return;
+            }
+            if ($("input[name='Pass']").val().length < 6) {
+                $(this).focus();
+                alert('密码少余6位！'); return;
+            }
+            if ($("input[name='verify']").val() == "") {
+                $(this).focus();
+                alert('请输入验证码！'); return;
+            }
+            $.ajax({
+                url: '@Url.Action("Login")',
+                type: 'post',
+                data: {
+                    uId: $("input[name='User']").val(),
+                    uPassword: $("input[name='Pass']").val(),
+                    yzm: $("input[name='verify']").val()
+                },success: function(s) {
+                    if (s.IsSuccess == false) {
+                        alert(s.Message);
+                        $("input[name='verify']").val("");
+                        $("#verifyImg").click();
+                    } else {
+                        location.href = '@Url.Action("Index","Home")';
+                    }
+                },error: function() {
+                    alert("服务器繁忙,请稍后重试!");
+                }
+            });
+        });
+    </script>
+}

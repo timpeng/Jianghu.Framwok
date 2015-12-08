@@ -1,0 +1,107 @@
+﻿@using Jianghu.Framwork.Repository.Model
+@using Jianghu.Framwork.Repository.Repository
+@{
+    ViewBag.Title = "畅想新江湖 用户注册";
+}
+<div class="reg clear">
+    <div class="lft">
+        <div class="title">会员注册</div>
+        <form method="post" name="register" action="@Url.Action("Register")" id="loginForm">
+            <ul class="insert clear">
+                <li>
+                    <span class="u">用户名：</span>
+                    <input type="text" class="text" name="uId" maxlength="12">
+                    <span class="red">*</span><span class="remind">用户名应该为4-12位之间(数字或字母)</span>
+                </li>
+                <li>
+                    <span class="u">密码：</span><input type="password" class="text" name="uPassword" maxlength="12">
+                    <span class="red">*</span><span class="remind">密码应该为6-12位之间</span>
+                </li>
+                <li>
+                    <span class="u">确认密码：</span><input type="password" class="text" name="password_c" maxlength="12">
+                    <span class="red">*</span><span class="remind">密码输入一致</span>
+                </li>
+                <li>
+                    <span class="u">昵称：</span><input type="text" class="text" name="FirstName" maxlength="12">
+                    <span class="red">*</span><span class="remind">昵称应该为2-12位之间</span>
+                </li>
+                <li>
+                    <span class="u">验证码：</span><input type="text" class="yzm" name="yzm" maxlength="5">
+                    <img src="@Url.Action("ValidateCode", "Common")" class="yzms" title="刷新验证码" id="verifyImg">
+                </li>
+                <li>
+                    <input type="checkbox" name="Agreement" value="read" checked="checked" class="xy"><i>
+                        <a href="">我同意注册协议</a>
+                    </i>
+                </li>
+                <li>
+                    <span class="u">&nbsp;</span><input type="button" id="sub" class="btn" value="立即注册">
+                </li>
+            </ul>
+        </form>
+    </div><div class="rgt">
+        <p>已经有了账号？</p>
+        <p>请直接登陆</p><p><a href="@Url.Action("Login")" class="login">立即登录</a></p>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        @{
+            string s = string.Empty;
+            var result = ViewData["s"] as Messager<MemberInfo>;
+            if (result!=null)
+            {
+                s = result.Message;
+            }
+        }
+        if ('@s') {
+            alert('@s');
+        }
+        $("#sub").live("click", function () {
+            if ($("input[name='uId']").val() == "") {
+                alert('请输入用户名！'); return;
+            }
+            if ($("input[name='uId']").val().length < 4) {
+                alert('帐号长度少余4位！'); return;
+            }
+            if ($("input[name='uPassword']").val() == "") {
+                alert('请输入密码！'); return;
+            }
+            if ($("input[name='uPassword']").val().length < 6) {
+                alert('密码长度少余6位！'); return;
+            }
+            if ($("input[name='password_c']").val() != $("input[name='uPassword']").val()) {
+                alert('两次密码不一致！请重新输入！'); return;
+            }
+            if ($("input[name='FirstName']").val() == "") {
+                alert('请输入昵称！'); return;
+            }
+            if ($("input[name='FirstName']").val().length < 2) {
+                alert('昵称长度少余2位！'); return;
+            }
+            if ($("input[name='verify']").val() == "") {
+                alert('请输入验证码！'); return;
+            }
+            $("#loginForm").submit();
+        });
+    </script>
+    <style>
+        .reg .lft .insert li i a {
+            margin-left: 10px;
+            font-style: normal;
+            color: red;
+        }
+
+        .reg .lft .insert li .xy {
+            margin: 16px 0 0 80px;
+        }
+
+        .reg {
+            width: 1000px;
+            background: url(/Content/images/reg_bg.png) no-repeat top center;
+            padding-bottom: 403px;
+            margin-left: 48px;
+        }
+    </style>
+}

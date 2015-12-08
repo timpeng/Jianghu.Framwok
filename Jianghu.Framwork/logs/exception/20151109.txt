@@ -1,0 +1,21 @@
+2015/11/9 13:06:30:source:System.Data;\r\message:无法找到表 0。;\r\nstacktrace:   在 System.Data.DataTableCollection.get_Item(Int32 index)
+   在 Jianghu.Framwork.Repository.Repository.SqlHelper.ExecuteDataTable(String connectionString, String commandText, SqlParameter[] parms) 位置 d:\Download\web\Jianghu.Framwork\Jianghu.Framwork.Repository\Repository\SqlHelper.cs:行号 631
+   在 Jianghu.Framwork.Repository.Repository.SqlHelper.ExecuteObject[T](String connectionString, String commandText, SqlParameter[] parms) 位置 d:\Download\web\Jianghu.Framwork\Jianghu.Framwork.Repository\Repository\SqlHelperExtension.cs:行号 35
+   在 Jianghu.Framwork.Repository.Repository.SqlHelper.ExecuteObject[T](String commandText, SqlParameter[] parms) 位置 d:\Download\web\Jianghu.Framwork\Jianghu.Framwork.Repository\Repository\SqlHelperExtension.cs:行号 21
+   在 Jianghu.Framwork.Repository.Repository.AvatarInfoRepository.GetItem(String item, Int32 playtime, String aName) 位置 d:\Download\web\Jianghu.Framwork\Jianghu.Framwork.Repository\Repository\AvatarInfoRepository.cs:行号 112
+   在 Jianghu.Framwork.Controllers.HomeController.ExChange(String item, Int32 playtime, String aName) 位置 d:\Download\web\Jianghu.Framwork\Jianghu.Framwork\Controllers\HomeController.cs:行号 66
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult);\r\n\r\n

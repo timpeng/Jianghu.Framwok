@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style type="text/css">
+        body, td, th {
+            font-size: 9pt;
+            color: #FFFFFF;
+        }
+
+        body {
+            scrollbar-face-color: #3C3932;
+            scrollbar-shadow-color: #1F1E1C;
+            scrollbar-highlight-color: #1F1E1C;
+            scrollbar-3dlight-color: #1A1917;
+            scrollbar-darkshadow-color: #1F1E1C;
+            scrollbar-track-color: #111110;
+            scrollbar-arrow-color: #FF5400;
+            background-color: #260800;
+            background-image: url(/Content/images/Ljstyle_Net_By.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        a {
+            font-size: 9pt;
+            color: #666666;
+        }
+
+            a:link {
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+
+            a:visited {
+                text-decoration: none;
+                color: #FF6600;
+            }
+
+            a:hover {
+                text-decoration: underline;
+                color: #FFFF00;
+            }
+
+            a:active {
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+
+        .pay:link {
+            color: #FF6000;
+        }
+
+        .pay:visited {
+            color: #FF9600;
+        }
+
+        .pay:hover {
+            color: #FF9600;
+        }
+
+        .pay:active {
+            color: #FF9600;
+        }
+
+        .lianjie2 {
+            FILTER: dropshadow(color=#000000, offx=1, offy=1, positive=1);
+            COLOR: #000000;
+            FONT-FAMILY: "宋体";
+        }
+
+        .lianjie3 {
+            FILTER: dropshadow(color=#FFFFFF, offx=1, offy=1, positive=1);
+            COLOR: #FFFFFF;
+            FONT-FAMILY: "宋体";
+        }
+
+        .STYLE83 {
+            color: #FFFFFF;
+            font-size: 10pt;
+        }
+
+        .STYLE98 {
+            color: #FFFF00;
+        }
+
+        .STYLE99 {
+            color: #FFCC00;
+        }
+
+        .STYLE100 {
+            font-size: 12pt;
+            color: #000000;
+        }
+
+        .STYLE103 {
+            color: #000000;
+        }
+
+        .STYLE101 {
+            color: #990000;
+        }
+
+        .STYLE104 {
+            font-size: 16pt;
+            color: #FF9900;
+        }
+
+        .STYLE85 {
+            color: #FF0000;
+        }
+
+        .STYLE86 {
+            color: #66FF00;
+        }
+
+        .STYLE87 {
+            color: #FF66FF;
+        }
+
+        .STYLE89 {
+            color: #6699FF;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/AC_RunActiveContent.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

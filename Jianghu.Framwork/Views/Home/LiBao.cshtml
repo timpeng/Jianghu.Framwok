@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "问鼎新江湖 礼包领取";
+}
+@using Jianghu.Framwork.Repository.Fields
+@model Jianghu.Framwork.Repository.Model.AvatarInfo
+<div style="width: 400px;margin:100px auto;">
+    <label>角色：</label>
+    @Html.DropDownListFor(u => u.aName, ViewBag.NameList as IEnumerable<SelectListItem>)
+    <label>选择门派：</label>
+    <select id="tribe">
+        <option value="@TribeEnum.正">真武剑门</option>
+        <option value="@TribeEnum.邪">天霸刀门</option>
+        <option value="@TribeEnum.魔">魔尊血门</option>
+    </select>
+    <button id="submit">开始领取</button>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $("#submit").click(function () {
+            if (!$("#aName").val()) {
+                alert("请选择用户角色!");
+            } else if (!$("#tribe").val()) {
+                alert("请选择等级!");
+            } else {
+                $.ajax({
+                    url: '@Url.Action("GetLiBao")',
+                    type: 'post',
+                    data: {
+                        tribe: $("#tribe").val(),
+                        aName: $("#aName").val()
+                    },
+                    success: function (s) {
+                        if (s) {
+                            alert("礼包领取成功!");
+                        } else {
+                            alert("必须清空仓库,才能再次领取!");
+                        }
+                    }, error: function () {
+                        alert("服务器正忙,请稍后重试!");
+                    }
+                });
+            }
+        });
+
+    </script>
+}

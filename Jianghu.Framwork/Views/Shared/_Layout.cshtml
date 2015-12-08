@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="新江湖2.0是目前玩家最欢迎和关注的新江湖2.0,我们本着公平公正,长久稳定的方式开放江湖游戏,我们一定会努力做的更好!">
+    <meta name="description" content="新江湖2.0是目前玩家最欢迎和关注的新江湖2.0,我们本着公平公正,长久稳定的方式开放江湖游戏,我们一定会努力做的更好!">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="bd_cent clear">
+        <div class="nav">
+            <ul class="nav_ul clear">
+                <li><a href="/" class="nav_1"></a></li>
+                <li><a href="/news" class="nav_2"></a></li>
+                <li><a href="/single/#On64" class="nav_3"></a></li>
+                <li><a href="/single/#On65" class="nav_4"></a></li>
+                <li><img src="/Content/images/nav_logo.png"></li>
+                <li><a href="/single/#On66" class="nav_5"></a></li>
+                <li><a href="/Pay" class="nav_6"></a></li>
+                <li><a href="/product" class="nav_7"></a></li>
+                <li><a href="#" class="nav_8"></a></li>
+            </ul>
+        </div>
+        @RenderBody()
+        <div class="footer">
+            <div class="l"><img src="/Content/images/foot_logo.png"></div>
+            <div class="r">
+                <div class="men clear">
+                    <a href="/">首页</a><span>|</span>
+                    <a href="/news">新闻公告</a><span>|</span><a href="/single/#On64">新手指南</a>
+                    <span>|</span><a href="/Pay">账号充值</a><span>|</span><a href="/product">商品中心</a><span>|</span>
+                    <a href="#">论坛</a>
+                </div>
+                <div>Copyright 2015 DongYou Corporation All Rights Reserved</div>
+                <div>问鼎新江湖 版权所有 京ICP备34345346</div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/carouFredSel-6.2.1-min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $("#verifyImg").click(function () {
+            $(this).attr("src", '@Url.Action("ValidateCode","Common")?time=' + (new Date()).getTime());
+        });
+    </script>
+</body>
+</html>

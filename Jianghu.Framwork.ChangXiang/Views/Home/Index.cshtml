@@ -1,0 +1,376 @@
+﻿@using System.Configuration
+@using Jianghu.Framwork.Core
+@{
+    ViewBag.Title = "畅想新江湖";
+}
+@model Jianghu.Framwork.Repository.Model.AvatarInfo
+<div style="position:absolute;top:20px;right:80px;font-size: 15px;color:red">当前在线用户：【@ViewBag.aName】 &nbsp;&nbsp;<a id="exit" href="javascript:void(0)">立即退出</a></div>
+<div class="main3">
+    <img src="/Content/images/taobao_com_btn_bg.jpg" width="1002" height="263" border="0" usemap="#Map" />
+    <map name="Map" id="Map">
+        <area shape="rect" coords="339,2,512,59" href="@Url.Action("Register","Account")" alt="用户注册" />
+        <area shape="rect" id="exchange" coords="513,2,681,60" href="javascript:void(0)" target="_blank" alt="物品兑换" />
+        <area shape="rect" id="choujiang" coords="680,2,853,61" href="javascript:void(0)" target="_blank" alt="游戏抽奖" />
+        <area shape="rect" coords="852,3,1007,58" href="@ConfigurationManager.AppSettings["download"]" target="_blank" alt="游戏下载" />
+    </map>
+</div>
+<!--顶部结束-->
+<!--内容-->
+<div class="content"></div>
+<div class="content2">
+    <div class="content3" style="line-height:25px;">
+        <!--游戏介绍文字内容-->
+        <ul>
+            <li class="STYLE2"> 畅享新江湖之终极篇</li>
+            <li class="STYLE2"></li>
+            <li class="STYLE1">
+                <strong>
+                    经历数个服务器的洗礼，畅享推出最后终极版本，还广大江湖玩家一个最合理的江湖<br>
+                    最新版本无力敏，轻微变动，增加各类玩法比如魔域塔玩法，幻天境玩法，斩魔，铭剑等<br>
+                    开启在线时间兑换各类装备，也可用贡献兑换进行欢乐大抽奖，更多玩法尽在畅享新江湖<br>
+                    再线1000分钟即可兑换任何一套神装，服务器不出售任何装备，所有珍贵物品均由开包开出
+                </strong>
+            </li>
+            <li class="STYLE1">
+                <strong>
+                    上线送精美新人神装一套，500血蓝丹，200凤凰和蝴蝶一只<br>
+                    时间系统∶1000分钟兑换110.+9.+99任意神装一套（白）<br>
+                    1000分钟兑换200佛光.200金刚.200天兆任意一只<br>
+                    1000分钟可兑换100贡献度<br>
+                    1000分钟可兑换游戏币100000000<br>
+                    贡献系统  1000分钟可兑换5000商城币进行快乐大抽奖<br>
+                    魔域塔系统 1-3层BOSS必掉10元商城卷，4-6层BOSS必掉20元商城卷，9层大慈悲必暴百元商城卷<br>
+                    幻天境    所有BOSS伤害降低，掉落血丹，存钱罐，材料等<br>
+                    PK系统    杀人增大几率掉落超级血丹兑换卷<br>
+                    野外BOSS  每只BOSS必掉存钱罐一枚，不在让BOSS一穷二白
+                </strong>
+            </li>
+            <li class="STYLE3">畅享新江湖（主群） 164203674</li>
+            <li style="color:#0F0; font-size:14px;"></li>
+        </ul>
+        <!--游戏介绍结束-->
+    </div>
+</div>
+<div class="content4"></div>
+<div class="content5">
+    <div class="content6">
+        <!--开区列表开始-->
+        <!--开区列表结束-->
+        <!--装备展示-->
+        <table width="100%" border="1" cellspacing="3" cellpadding="0" bordercolor="#61140E">
+            <tr>
+                <td align="center" valign="middle" bgcolor="#000000" style="padding-top:18px; padding-bottom:18px;">
+                    <img src="/Content/zb/1.jpg" alt="1" width="378" height="412" />
+                    <img src="/Content/zb/3.jpg" alt="1" width="378" height="412" />
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="middle" bgcolor="#000000" style="padding-top:18px; padding-bottom:18px;">
+                    <p>&nbsp;</p>
+                    <p>
+                        <img src="/Content/zb/4.jpg" alt="1" width="372" height="411" />
+                        <img src="/Content/zb/4.jpg" alt="1" width="372" height="411" />
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>        <p>&nbsp;</p>
+                </td>
+            </tr>
+        </table>
+        <!--装备展示结束-->
+    </div>
+</div>
+<!--内容结束-->
+<!--底部-->
+<div class="footer">
+    <div style="height:36px; line-height:36px;">
+        <!--这里面不写文字内容，只是一个页面占据距离-->
+    </div>
+    <div style="text-align:center; line-height:22px;">
+        网站所属权归畅想新江湖所有 tompeng游戏工作室 <br />
+        Copyright 2015-@DateTime.Now.Year &copy; 祝君游戏愉快..<br />
+    </div>
+</div>
+
+<!--底部结束-->
+@section scripts
+{
+    <style type="text/css">
+        #fm {
+            margin: 0;
+            padding: 10px 30px;
+        }
+
+        .ftitle {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .fitem {
+            margin-bottom: 5px;
+        }
+
+        .fitem label {
+            display: inline-block;
+            width: 80px;
+        }
+
+        label {
+            color: cadetblue;
+        }
+    </style>
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
+    <link href="~/Content/layer/skin/layer.ext.css" rel="stylesheet" />
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/layer/extend/layer.ext.js"></script>
+    <script src="~/Scripts/jsrender.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#choujiang").click(function () {
+                layer.open({
+                    scrollbar: false,
+                    title: '点数抽奖(每次368点)',
+                    type: 1,
+                    shift: 3,
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['620px', '250px'], //宽高
+                    content: $("#choujiangTemplate").render(),
+                    success: function (layero, index) {
+                        $("#look").click(function () {
+                            if (!$("#aName").val()) {
+                                layer.tips('请选择用户角色!', '#aName');
+                            } else {
+                                window.open('@Url.Action("Item", "Home")?aName=' + $("#aName").val());
+                            }
+                        });
+                        $("#getChoujiang").click(function () {
+                            if (!$("#aName").val()) {
+                                layer.tips('请选择用户角色!', '#aName');
+                            } else {
+                                layer.msg('奖品正在出库,请等待....', { icon: 16, shade: [0.5, '#393D49'] });
+                                $.ajax({
+                                    url: '@Url.Action("Choujiang")',
+                                    type: 'post',
+                                    data: { aName: $("#aName").val() },
+                                    success: function (s) {
+                                        if (s) {
+                                            layer.alert(s, { icon: 1, shift: 6 });
+                                        }
+                                        layer.closeAll('msg');
+                                    }, error: function () {
+                                        layer.msg("服务器繁忙,稍后请重试!");
+                                        layer.closeAll('msg');
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+            $("#exchange").click(function () {
+                layer.open({
+                    scrollbar: false,
+                    title: '新手礼包 物品兑换',
+                    type: 1,
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['620px', '380px'], //宽高
+                    content: $("#exchangeTemplate").render(),
+                    success: function (layero, index) {
+                        $("#reset").click(function () {
+                            var aName = $("#aName").val();
+                            if (!aName) {
+                                layer.tips('请选择用户角色!', '#aName');
+                            } else {
+                                $.ajax({
+                                    url: '@Url.Action("UpdateStateBonusPoint")',
+                                    data: { aName: $("#aName").val() },
+                                    type: 'post',
+                                    success: function (s) {
+                                        if (s) {
+                                            layer.alert("重置成功,请登录游戏查看!", { icon: 1, shift: 6 });
+                                        } else {
+                                            layer.alert("对不起,你不是100级!", { icon: 2, shift: 6 });
+                                        }
+                                    }, error: function () {
+                                        layer.msg("服务器繁忙,稍后请重试!");
+                                    }
+                                });
+                            }
+                        });
+                        $("#aName").change(function () {
+                            var aName = $(this).val();
+                            getValue(aName);
+                        });
+                        $("#getLibao").click(function () {
+                            var aName = $("#aName").val();
+                            if (!aName) {
+                                layer.tips('请选择用户角色!', '#aName');
+                            } else {
+                                $("#getLibao").attr("disabled", true).val("领取中请稍后...");
+                                $.ajax({
+                                    url: '@Url.Action("GetLiBao")',
+                                    type: 'post',
+                                    data: { aName: aName },
+                                    success: function (s) {
+                                        if (s) {
+                                            layer.msg("恭喜你,领取成功,祝游戏愉快!", { icon: 1 });
+                                        } else {
+                                            layer.msg("领取失败,请检查仓库是否为空!", { icon: 2 });
+                                        }
+                                        $("#getLibao").attr("disabled", false).val("礼包领取");
+                                    },
+                                    error: function () {
+                                        $("#getLibao").attr("disabled", false).val("礼包领取");
+                                        layer.msg("服务器繁忙,稍后请重试!");
+                                    },
+                                    dataType: 'json'
+                                });
+                            }
+                        });
+                        $("#getItem").click(function () {
+                            var aName = $("#aName").val();
+                            var playTime = $("#playtime").attr("data-value");
+                            if (!aName) {
+                                layer.tips('请选择用户角色!', '#aName');
+                            } else if (parseInt(playTime) < 1000) {
+                                layer.tips('在线时间不足1000分钟!', '#playtime');
+                            } else {
+                                $("#getItem").attr("disabled", true).val("兑换中请稍后...");
+                                var selectValue = $("#item").find("option:selected");
+                                var dataValue = selectValue.attr("data-value");
+                                var item = $("#item").val();
+                                $.ajax({
+                                    url: '@Url.Action("ExChange")',
+                                    type: 'post',
+                                    data: {
+                                        item: item,
+                                        dataValue: dataValue,
+                                        aName: aName,
+                                        playtime: playTime
+                                    },
+                                    success: function (s) {
+                                        if (s.IsSuccess) {
+                                            layer.alert(s.Message, { icon: 1 });
+                                            if (s.IsSuccess == true) {
+                                                getValue($("#aName").val());
+                                            }
+                                        } else {
+                                            layer.alert(s.Message, { icon: 2 });
+                                        }
+                                        $("#getItem").attr("disabled", false).val("开始兑换");
+                                    },
+                                    error: function () {
+                                        $("#getItem").attr("disabled", false).val("开始兑换");
+                                        layer.alert("服务器繁忙,稍后请重试!");
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+            $("#exit").click(function () {
+                layer.confirm('确定要退出吗?', { icon: 3 }, function (index) {
+                    layer.close(index);
+                    $.ajax({
+                        url: '@Url.Action("Exit", "Account")',
+                        type: 'post',
+                        success: function (s) {
+                            if (s) {
+                                location.reload();
+                            }
+                        },
+                        error: function () {
+                            layer.msg("服务器繁忙,稍后请重试!");
+                        }
+                    });
+                });
+            });
+        });
+
+        function getValue(aName) {
+            $.ajax({
+                type: 'get',
+                url: '@Url.Action("GetPlayTime")',
+                data: { aName: aName },
+                success: function (s) {
+                    $("#playtime").val(s + " 分钟");
+                    $("#playtime").attr("data-value", s);
+                }
+            });
+        }
+    </script>
+    <script type="x-jsrender" id="exchangeTemplate">
+        <div style="padding: 10px 100px; background: aliceblue;">
+            <form id="fm" method="post" novalidate>
+                <div class="fitem">
+                    <label>用户角色:</label>
+                    @Html.DropDownListFor(u => u.aName, ViewBag.NameList as IEnumerable<SelectListItem>, new { @class = "txt" })
+                </div>
+                <div class="ftitle"></div>
+                <div class="fitem">
+                    <label>新手礼包领取</label>
+                    <input id="getLibao" class="btn" type="button" value="礼包领取">
+                </div>
+                <div class="ftitle"></div>
+                <div class="fitem">
+                    <label>兑换物品:</label>
+                    <select class="txt" id="item">
+                        <option value="@Encrpyt.Encode("99226000")" data-value="@Encrpyt.Encode("289931120")">佛光</option>
+                        <option value="@Encrpyt.Encode("99227000")" data-value="@Encrpyt.Encode("289931120")">天兆</option>
+                        <option value="@Encrpyt.Encode("99228000")" data-value="@Encrpyt.Encode("289931120")">金刚</option>
+                        <option value="@Encrpyt.Encode("1500300015007000150110001501500015019000150230001502700015029000")">110正神套</option>
+                        <option value="@Encrpyt.Encode("3500300035007000350110003501500035019000350230003502700035027000")">110邪神套</option>
+                        <option value="@Encrpyt.Encode("5500300055007000550110005501500055019000550230005502700055029000")">110魔神套</option>
+                        <option value="@Encrpyt.Encode("1511900015141000151630001518500015207000152290001525100015273000")">123正神套</option>
+                        <option value="@Encrpyt.Encode("3511900035141000351630003518500035207000352290003525100035273000")">123邪神套</option>
+                        <option value="@Encrpyt.Encode("5511900055141000551630005518500055207000552290005525100055273000")">123魔神套</option>
+                        <option value="@Encrpyt.Encode("1513500015157000151790001520100015223000152450001526700015289000")">145正神套</option>
+                        <option value="@Encrpyt.Encode("3513500035157000351790003520100035223000352450003526700035289000")">145邪神套</option>
+                        <option value="@Encrpyt.Encode("5513500055157000551790005520100055223000552450005526700055289000")">145魔神套</option>
+                        <option data-value="@Encrpyt.Encode("100")">100贡献</option>
+                        <option data-value="@Encrpyt.Encode("100000000")">1E游戏币</option>
+                        <option data-value="@Encrpyt.Encode("5000")">5000商城点</option>
+                    </select>
+                </div>
+                <div class="fitem">
+                    <label>在线时间:</label>
+                    <input class='txt' readonly="readonly" id="playtime" />
+                </div>
+                <div class="fitem">
+                    <label></label>
+                    <input id="getItem" class="btn" type="button" value="开始兑换">
+                </div>
+                <div class="fitem">
+                    <label></label>
+                    <a href="javascript:void(0)" style="color:red" id="reset">100级属性错误,点我重置属性点</a>
+                </div>
+            </form>
+        </div>
+    </script>
+    <script type="x-jsrender" id="choujiangTemplate">
+        <div style="padding: 10px 100px; background: aliceblue;">
+            <form id="fm" method="post" novalidate>
+                <div class="ftitle"></div>
+                <div class="fitem">
+                    <label>当前点数:</label>
+                    <span>@ViewBag.Cash</span>
+                </div>
+                <div class="fitem">
+                    <label>用户角色:</label>
+                    @Html.DropDownListFor(u => u.aName, ViewBag.NameList as IEnumerable<SelectListItem>, new { @class = "txt" })
+                </div>
+                <div class="ftitle"></div>
+                <div class="fitem">
+                    <label></label>
+                    <input id="getChoujiang" class="btn" type="button" value="开始抽奖">
+                </div>
+                <div class ="fitem" >
+                    <a style="color:red" id="look" href='javascript:void(0)'>查看我的奖品</a>
+                </div>
+            </form>
+        </div>
+    </script>
+}
