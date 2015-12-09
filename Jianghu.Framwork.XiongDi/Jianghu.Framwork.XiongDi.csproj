@@ -131,6 +131,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\Down\Bl.png" />
     <Content Include="Content\Down\Jl.png" />
     <Content Include="Content\Down\Js.png" />
@@ -166,6 +167,15 @@
     <Content Include="Content\images\TB-by.jpg" />
     <Content Include="Content\images\TB-by_1.jpg" />
     <Content Include="Content\images\TB-by_2.jpg" />
+    <Content Include="Content\layer\extend\layer.ext.js" />
+    <Content Include="Content\layer\layer.js" />
+    <Content Include="Content\layer\skin\default\icon-ext.png" />
+    <Content Include="Content\layer\skin\default\icon.png" />
+    <Content Include="Content\layer\skin\default\loading-0.gif" />
+    <Content Include="Content\layer\skin\default\loading-1.gif" />
+    <Content Include="Content\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\layer\skin\layer.css" />
+    <Content Include="Content\layer\skin\layer.ext.css" />
     <Content Include="Content\Mp3\Mp3play.swf" />
     <Content Include="sound.mp3" />
     <Content Include="favicon.ico" />
@@ -206,6 +216,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Mp3\desktop.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangePwd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

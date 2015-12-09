@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>兄弟江湖 用户登录</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#sub').click(function (event) {
+            event.preventDefault();
+            if ($("input[name='User']").val() == "") {
+                $("input[name='User']").focus();
+                alert('请输入用户名！'); return;
+            }
+            if ($("input[name='User']").val().length < 4) {
+                $(this).focus();
+                alert('帐号少余4位！'); return;
+            }
+            if ($("input[name='Pass']").val() == "") {
+                $(this).focus();
+                alert('请输入密码！'); return;
+            }
+            if ($("input[name='Pass']").val().length < 6) {
+                $(this).focus();
+                alert('密码少余6位！'); return;
+            }
+            $("#sub").text("正在登陆请稍后...").attr("disabled", true);
+            $.ajax({
+                url: '@Url.Action("Index")',
+                    type: 'post',
+                    data: {
+                        uId: $("input[name='User']").val(),
+                        uPassword: $("input[name='Pass']").val()
+                    }, success: function (s) {
+                        if (s.IsSuccess == false) {
+                            alert(s.Message);
+                            $("#sub").text("开始登陆").attr("disabled", false);
+                        } else {
+                            window.parent.close("登陆成功,页面正在刷新");
+                        }
+                    }, error: function () {
+                        $("#sub").text("开始登陆");
+                        alert("服务器繁忙,请稍后重试!").attr("disabled", false);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>用户登录</h1>
+            <form class="form">
+                <input type="text" name="User" placeholder="用户名">
+                <input type="password" name="Pass" placeholder="密码">
+                <button type="submit" id="sub">开始登陆</button>
+            </form>
+        </div>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

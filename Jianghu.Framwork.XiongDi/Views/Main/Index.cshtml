@@ -1,6 +1,9 @@
-﻿@{
+﻿@using System.Configuration
+@{
     ViewBag.Title = "兄弟新江湖";
 }
+<div id="title" style="position:absolute;top:20px;right:80px;font-size: 18px;color:white"><a style="margin-right:10px;color:violet;font-size:18px;" href="javascript:changePwd()">修改密码</a></div>
+
 <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
         <th height="422" scope="col"><img src="/Content/images/image 8.jpg" width="1002" height="422"></th>
@@ -9,13 +12,13 @@
 <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top: -3px;">
     <tr>
         <th width="67" background="/Content/images/Ljstyle_Net_Images_04.jpg" scope="col">&nbsp;</th>
-        <th scope="col"><a href="创世合击[0302].rar" target="_blank" onmouseover="MM_swapImage('游戏帐号注册','','/Content/images/Ljstyle_Net_Images_05_1.jpg',1)"><img src="/Content/images/Ljstyle_Net_Images_05.jpg" name="网盘登陆器下载" width="289" height="103" border="0"></a></th>
-        <th scope="col"><a href="创世合击[0302].rar" target="_blank" onmouseover="MM_swapImage('兑换抽奖页面','','/Content/images/Ljstyle_Net_Images_06_1.jpg',1)"><img src="/Content/images/Ljstyle_Net_Images_06.jpg" name="本地登陆器下载" width="292" height="103" border="0"></a></th>
-        <th scope="col"><a href="ct.html" target="_blank" onmouseover="MM_swapImage('游戏下载连接','','/Content/images/Ljstyle_Net_Images_07_1.jpg',1)"><img src="/Content/images/Ljstyle_Net_Images_07.jpg" name="进入游戏充值" width="291" height="103" border="0"></a></th>
+        <th scope="col"><a href="javascript:register()" target="_blank" ><img src="/Content/images/Ljstyle_Net_Images_05.jpg" alt="注册" width="289" height="103" border="0"></a></th>
+        <th scope="col"><a href="" target="_blank" ><img src="/Content/images/Ljstyle_Net_Images_06.jpg" alt="抽奖" width="292" height="103" border="0"></a></th>
+        <th scope="col"><a href="@ConfigurationManager.AppSettings["download"]" target="_blank"><img src="/Content/images/Ljstyle_Net_Images_07.jpg" alt="游戏下载" width="291" height="103" border="0"></a></th>
         <th width="63" height="103" background="/Content/images/Ljstyle_Net_Images_08.jpg" scope="col">&nbsp;</th>
     </tr>
 </table>
-<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" >
+<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
         <th height="450" align="left" valign="top" background="/Content/images/Ljstyle_Net_Images_09.jpg" scope="col">
             <table width="1002" border="0" cellspacing="0" cellpadding="0">
@@ -102,7 +105,7 @@
         </th>
     </tr>
 </table>
-<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" >
+<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
         <th height="183" align="left" valign="top" background="/Content/images/Ljstyle_Net_Images_10.jpg" scope="col">
             <table width="1002" height="111" border="0" cellpadding="0" cellspacing="0">
@@ -261,3 +264,77 @@
         </th>
     </tr>
 </table>
+@section scripts
+{
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
+    <script src="~/Content/layer/layer.js"></script>
+    <script type="text/javascript">
+        if (!'@ViewBag.aName') {
+            layer.open({
+                scrollbar: false,
+                title: false,
+                type: 2,
+                skin: 'layui-layer-nobg', //没有背景色
+                area: ['700px', '400px'],
+                fix: false, //不固定
+                shift: 4,
+                maxmin: false,
+                content: '@Url.Action("Index","Account")'
+            });
+        }
+
+        function close(msg) {
+            layer.closeAll('iframe');
+            layer.msg(msg, { time: 1000, icon: 16, shade: [0.5, '#393D49'] }, function () {
+                location.href = '@Url.Action("Index","Main")';
+            });
+        }
+        function register() {
+            layer.open({
+                shift: 2,
+                scrollbar: false,
+                title: false,
+                type: 2,
+                skin: 'layui-layer-nobg', //没有背景色
+                area: ['700px', '450px'],
+                fix: false, //不固定
+                maxmin: false,
+                content: '@Url.Action("Register","Account")'
+            });
+        }
+        if ('@ViewBag.aName') {
+            $("#title").append('<span>当前在线用户：【@ViewBag.aName】</span> &nbsp;&nbsp;<a id="exit" href="javascript:void(0)">立即退出</a>');
+            $("#exit").click(function () {
+                layer.confirm('确定要退出吗?', { icon: 3 }, function (index) {
+                    layer.close(index);
+                    $.ajax({
+                        url: '@Url.Action("Exit", "Account")',
+                        type: 'post',
+                        success: function (s) {
+                            if (s) {
+                                location.reload();
+                            }
+                        },
+                        error: function () {
+                            layer.msg("服务器繁忙,稍后请重试!");
+                        }
+                    });
+                });
+            });
+        }
+
+        function changePwd() {
+            layer.open({
+                shift: 2,
+                scrollbar: false,
+                title: false,
+                type: 2,
+                skin: 'layui-layer-nobg', //没有背景色
+                area: ['700px', '450px'],
+                fix: false, //不固定
+                maxmin: false,
+                content: '@Url.Action("ChangePwd","Account")'
+            });
+        }
+    </script>
+}

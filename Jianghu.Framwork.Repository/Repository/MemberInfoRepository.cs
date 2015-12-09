@@ -78,7 +78,7 @@ namespace Jianghu.Framwork.Repository.Repository
         /// <summary>
         /// 修改密码
         /// </summary>
-        public Messager<MemberInfo> ChangePwd(string uid, string newPwd)
+        public Messager<MemberInfo> ChangePwd(string uid, string newPwd,string oldPwd)
         {
             var message = new Messager<MemberInfo>();
             var data = GetMemberInfoByUid(uid);
@@ -86,7 +86,7 @@ namespace Jianghu.Framwork.Repository.Repository
             {
                 message.Message = "用户名不存在!";
             }
-            else if (data.uPassword != newPwd.CreateMd5())
+            else if (data.uPassword != oldPwd.CreateMd5())
             {
                 message.Message = "旧密码错误!";
             }

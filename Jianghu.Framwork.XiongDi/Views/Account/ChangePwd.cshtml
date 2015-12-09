@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChangePwd</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#sub').click(function (event) {
+            event.preventDefault();
+            if ($("input[name='uId']").val() == "") {
+                alert('请输入用户名！'); return;
+            }
+            if ($("input[name='uPassword']").val() == "") {
+                alert('请输入旧密码！'); return;
+            }
+            if ($("input[name='password_c']").val().length < 6) {
+                alert('新密码不能长度少余6位！'); return;
+            }
+            $("#sub").text("正在修改请稍后...").attr("disabled", true);
+            $.ajax({
+                type: 'post',
+                uel: '@Url.Action("ChangePwd")',
+                data: {
+                    uId: $("input[name='uId']").val(),
+                    oldPwd: $("input[name='uPassword']").val(),
+                    newPwd: $("input[name='password_c']").val(),
+                },
+                    success: function (s) {
+                        if (s.IsSuccess == false) {
+                            alert(s.Message);
+                            $("#sub").text("开始修改").attr("disabled", false);
+                        } else {
+                            window.parent.close("修改成功,页面正在刷新");
+                        }
+                    }, error: function () {
+                        $("#sub").text("开始修改");
+                        alert("服务器繁忙,请稍后重试!").attr("disabled", false);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>密码修改</h1>
+            <form class="form">
+                <input type="text" name="uId" placeholder="用户名">
+                <input type="password" name="uPassword" placeholder="旧密码">
+                <input type="password" name="password_c" placeholder="新密码">
+                <button type="button" id="sub">开始修改</button>
+            </form>
+        </div>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</body>
+</html>

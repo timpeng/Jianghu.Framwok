@@ -1,0 +1,88 @@
+﻿@using Jianghu.Framwork.Repository.Model
+@using Jianghu.Framwork.Repository.Repository
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#sub').click(function (event) {
+            event.preventDefault();
+            if ($("input[name='uId']").val() == "") {
+                alert('请输入用户名！'); return;
+            }
+            if ($("input[name='uId']").val().length < 4) {
+                alert('帐号长度少余4位！'); return;
+            }
+            if ($("input[name='uId']").val().length >= 11) {
+                alert('帐号长度大于11位！'); return;
+            }
+            if ($("input[name='uPassword']").val() == "") {
+                alert('请输入密码！'); return;
+            }
+            if ($("input[name='uPassword']").val().length < 6) {
+                alert('密码长度少余6位！'); return;
+            }
+            if ($("input[name='password_c']").val() != $("input[name='uPassword']").val()) {
+                alert('两次密码不一致！请重新输入！'); return;
+            }
+            $("#sub").text("正在注册请稍后...").attr("disabled", true);
+            $.ajax({
+                type: 'post',
+                uel: '@Url.Action("Register")',
+                data: {
+                    uId: $("input[name='uId']").val(),
+                    uPassword: $("input[name='uPassword']").val(),
+                },
+                    success: function (s) {
+                        if (s.IsSuccess == false) {
+                            alert(s.Message);
+                            $("#sub").text("开始注册").attr("disabled", false);
+                        } else {
+                            window.parent.close("注册成功,页面正在刷新");
+                        }
+                    }, error: function () {
+                        $("#sub").text("开始注册");
+                        alert("服务器繁忙,请稍后重试!").attr("disabled", false);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>用户注册</h1>
+            <form class="form">
+                <input type="text" name="uId" placeholder="用户名">
+                <input type="password" name="uPassword" placeholder="密码">
+                <input type="password" name="password_c" placeholder="确认密码">
+                <button type="button" id="sub">开始注册</button>
+            </form>
+        </div>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

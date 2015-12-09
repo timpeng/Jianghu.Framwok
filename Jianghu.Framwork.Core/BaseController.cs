@@ -10,6 +10,7 @@ namespace Jianghu.Framwork.Core
 {
     public class BaseController : Controller
     {
+        public bool IsRedirect { get; set; }
         public MemberInfo SessionInfo { get; private set; }
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -19,10 +20,10 @@ namespace Jianghu.Framwork.Core
             }
             else
             {
-                filterContext.Result =
-                new RedirectToRouteResult(
-                    new RouteValueDictionary(
-                    new { action = "Login", controller="Account" }));
+                //filterContext.Result =
+                //new RedirectToRouteResult(
+                //    new RouteValueDictionary(
+                //    new { action = "Login", controller="Account" }));
             }
             base.OnActionExecuting(filterContext);
         }
